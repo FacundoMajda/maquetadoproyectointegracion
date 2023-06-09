@@ -11,6 +11,9 @@ import authRoutes from "./routes/auth.routes.js";
 const app = express();
 //llamamos uso de morgan para mostrar los request por consola
 app.use(morgan("dev"));
+
+//para convertir los requestbody de los request en formato json
+app.use(express.json());
 //llamamos authroutes
 
 //definimos que todas las rutas de authroutes van a iniciar con /api/[route]
