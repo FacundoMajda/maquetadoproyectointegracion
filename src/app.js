@@ -2,6 +2,7 @@ import express from "express";
 
 //funcionalidad para registrar todas las peticiones con un mensaje por consola
 //'node run dev'
+//auto-reconnect
 import morgan from "morgan";
 
 //import de rutas
@@ -11,7 +12,9 @@ const app = express();
 //llamamos uso de morgan para mostrar los request por consola
 app.use(morgan("dev"));
 //llamamos authroutes
-app.use(authRoutes);
+
+//definimos que todas las rutas de authroutes van a iniciar con /api/[route]
+app.use("/api", authRoutes);
 
 //exportamos app
 // Configura las rutas y middleware aquí
