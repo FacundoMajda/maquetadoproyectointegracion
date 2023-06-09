@@ -4,14 +4,15 @@ import express from "express";
 //'node run dev'
 import morgan from "morgan";
 
-
 //import de rutas
-import authRoutes from "./routes/auth.routes.js"
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
-
+//llamamos uso de morgan para mostrar los request por consola
 app.use(morgan("dev"));
-
+//llamamos authroutes
 app.use(authRoutes);
+
+//exportamos app
 
 export default app;
