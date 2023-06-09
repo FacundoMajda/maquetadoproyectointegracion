@@ -14,5 +14,6 @@ app.use(morgan("dev"));
 app.use(authRoutes);
 
 //exportamos app
-
+// Configura las rutas y middleware aquí
+module.exports = { app };
 export default app;
