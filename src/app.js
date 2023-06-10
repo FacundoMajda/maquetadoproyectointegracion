@@ -16,10 +16,9 @@ app.use(morgan("dev"));
 app.use(express.json());
 //llamamos authroutes
 
-//definimos que todas las rutas de authroutes van a iniciar con /api/[route]
+//definimos que todas las rutas de authroutes van a iniciar con /api/{route}
 app.use("/api", authRoutes);
 
 //exportamos app
 // Configura las rutas y middleware aquí
-
 export default app;
