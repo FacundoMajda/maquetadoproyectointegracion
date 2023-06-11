@@ -2,7 +2,7 @@
 //esquema
 //funcion para crear estructura
 
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 //definimos y exportamos esquema de usuario
 const userSchema = new mongoose.Schema({
