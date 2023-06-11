@@ -7,8 +7,8 @@ body {
   font-family: "Raleway", sans-serif;
   min-height: 600px;
   padding: 80px 0;
-  background-image: linear-gradient(to top, #b5c5e2 0%, #4a4c4e 100%);
-  background-color: #a3bded;
+  background-image: #fafbfb;
+  background-color: #fafbfb;
   background-repeat: no-repeat;
 
   display: flex;
@@ -18,11 +18,7 @@ body {
   margin: auto;
   width: 90%;
   max-width: 1000px;
-  background-image: linear-gradient(
-    to left,
-    rgba(255, 255, 255, 0.472),
-    rgba(255, 255, 255, 0.365)
-  );
+  background-image: linear-gradient(to left, #335eea, rgba(0, 46, 253, 0.365));
   overflow: hidden;
   padding: 0.7em;
   border-radius: 1em;
@@ -48,7 +44,7 @@ body {
 .main__figure {
   overflow: hidden;
   border-radius: 1em;
-  background-color: #d798f8;
+  background-color: #cda0e7;
   display: flex;
 }
 
@@ -84,7 +80,7 @@ body {
 }
 
 .main__input--send {
-  background-color: #dc3f31;
+  background-color: #161c2d;
   color: #fff;
   font-weight: 600;
 }
@@ -106,6 +102,7 @@ body {
 }
 
 .main__link {
+  background-color: #9bb0f8;
   border: 1px solid #fff;
   border-radius: 10px;
   padding: 0.6em 1.5em;
