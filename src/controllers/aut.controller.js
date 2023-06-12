@@ -1,4 +1,22 @@
-//Funciones para procesar peticiones
-export const register = (req, res) => res.send("register");
+import User from "../models/user.model.js";
 
-export const login = (req, res) => res.send("login");   
+//Funciones para procesar peticiones
+//Funcion register
+export const register = async (req, res) => {
+  const { username, password, email } = req.body;
+
+  try {
+    const newUser = new User({
+      username,
+      password,
+      email,
+    });
+    const userSaved = await newUser.save();
+    res.json(userSaved);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//Funcion login
+export const login = (req, res) => res.send("login");
