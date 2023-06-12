@@ -16,6 +16,11 @@ export const register = async (req, res) => {
     //devolver el usuario
     const userSaved = await newUser.save();
     res.json(userSaved);
+
+
+
+
+    
   } catch (error) {
     console.log(error);
   }
