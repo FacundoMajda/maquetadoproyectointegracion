@@ -19,7 +19,7 @@ router.post("/register", async (req, res) => {
     password: req.body.password,
     email: req.body.email,
   });
-  res.json({ success: true });
+  // res.json({ success: true });
 });
 
 router.post("/login", async (req, res) => {
@@ -30,7 +30,7 @@ router.post("/login", async (req, res) => {
     password: req.body.password,
     email: req.body.email,
   });
-  res.json({ success: true });
+  // res.json({ success: true });
 });
 
 export default router;
