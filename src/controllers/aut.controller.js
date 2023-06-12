@@ -6,11 +6,14 @@ export const register = async (req, res) => {
   const { username, password, email } = req.body;
 
   try {
+    //crear el usuario
     const newUser = new User({
       username,
       password,
       email,
     });
+
+    //devolver el usuario
     const userSaved = await newUser.save();
     res.json(userSaved);
   } catch (error) {
