@@ -9,7 +9,7 @@ import bcrypt from "bcryptjs";
 //Funciones para procesar peticiones
 //Funcion register
 export const register = async (req, res) => {
-  const { username, password, email } = req.body;
+  const { username, email, password } = req.body;
 
   try {
     const passwordHash = await bcrypt.hash(password, 10);
@@ -17,30 +17,33 @@ export const register = async (req, res) => {
     //crear el usuario
     const newUser = new User({
       username,
-      password,
-      email: passwordHash,
+      email,
+      password: passwordHash,
     });
 
     //Devolver el usuario
     const userSaved = await newUser.save();
 
-    jwt.sign(
-      { id: userSaved.id },
-      "secret123",
-      {
-        expiresIn: "Id",
-      },
-      (err, token) => {
-        if (err) console.error(err);
-        res.json(token);
-      }
-    );
+    res.send(userSaved);
+
+    // jwt.sign(
+    //   { id: userSaved.id },
+    //   "secret123",
+    //   {
+    //     expiresIn: "Id",
+    //   },
+    //   (err, token) => {
+    //     if (err) console.error(err);
+    //     res.json(token);
+    //   }
+    // );
+
     // res.json({
-    //   id: userSaved.id,
+    //   id: userSaved._id,
     //   username: userSaved.username,
     //   email: userSaved.email,
-    //   created_at: userSaved.created,
-    //   updated_at: userSaved.updated,
+    //   createdAt: userSaved.createdAt,
+    //   updatedAt: userSaved.updatedAt,
     // });
   } catch (error) {
     console.log(error);
